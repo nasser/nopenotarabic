@@ -6,14 +6,8 @@ name: Ramsey Nasser
 title: Nope, Not Arabic
 description: >
   An archive of things that are not Arabic
-url: http://barber.samesies.io
+url: http://notarabic.com
 twitter_username: ra
-
-# Author settings
-author:
-  - name: Ramsey Nasser
-    bio: Thomas Vaeth was born in New York, raised in Pennsylvania, and transplanted in Washington. He was a Web Developer at Urban Influence, but now he's a Software Engineer at Getty Images.
-    url: http://thomasvaeth.com
 
 # Pagination settings
 paginate: 25
@@ -22,7 +16,6 @@ paginate: 25
 markdown: kramdown
 plugins:
   - jekyll-paginate
-  # - jekyll-sitemap
 compress_html:
   clippings: all
   comments: all
