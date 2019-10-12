@@ -99,6 +99,9 @@
     @media (min-width: $mq-small) {
       padding-top: 1em;
     }
+
+    width: 50%;
+    float: left;
   }
 
   &__next {
