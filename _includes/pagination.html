@@ -1,11 +1,11 @@
 <div class="posts__pagination">
 {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}"><span class="posts__next">Newer</span></a>
+    <span class="posts__next"><a href="{{ paginator.previous_page_path }}">Newer</a></span>
 {% endif %}
   </div>
 
 <div class="posts__pagination">
 {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}"><span class="posts__next">Older</span></a>
+    <span class="posts__next"><a href="{{ paginator.next_page_path }}">Older</a></span>
 {% endif %}
 </div>

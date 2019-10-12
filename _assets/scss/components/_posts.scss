@@ -110,6 +110,16 @@
     position: relative;
     z-index: 1;
 
+    a:visited,
+    a:active,
+    a {
+      color: black !important;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     cursor: pointer;
 
     &:before,
