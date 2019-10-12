@@ -12,8 +12,8 @@ Computers are designed to handle the subset of the Latin script required to
 manipulate American English first and foremost. Every other writing system is an
 afterthought, and Arabic is particularly poorly served. Most of the images in
 this archive are the result of non-Arab graphic designers pasting Arabic text
-into [mainstream graphic design software](https://www.adobe.com) that cannot handle anything but Latin
-characters.
+into [mainstream graphic design software](https://www.adobe.com) that cannot
+handle anything but Latin characters.
 
 I have written about this at length at [The Increment](https://increment.com/programming-languages/unplain-text-primer-on-non-latin/) and the [Decolonising the Digital Journal](http://ojs.decolonising.digital/index.php/decolonising_digital/article/view/PersonalComputer).
 
