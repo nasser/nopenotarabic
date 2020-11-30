@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nope, Not Arabic</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit-icons.min.js"></script>
+</head>
+
+<body>
+    <div class="uk-container uk-padding">
+        <h1>Nope, Not Arabic</h1>
+        <p>A collection of things that are not Arabic. <a href="#about" uk-toggle>What is this?</a> </p>
+
+        <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-child-width-1-1@s" uk-grid="masonry:true">
+            {{#entries}}
+            <div>
+                <a href="#entry-{{index}}" uk-toggle>
+                    <img class="uk-align-center" data-src="{{{image}}}" uk-img width="1800" height="1200" />
+                </a>
+            </div>
+            {{/entries}}
+        </div>
+
+        {{#entries}}
+        <div id="entry-{{index}}" class="uk-flex-top" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <a target="_blank" href="{{{image}}}"><img class="uk-align-center" data-src="{{{image}}}" uk-img /></a>
+                <div class="uk-modal-footer">
+                    <p><em>{{{date}}}</em></p>
+                    {{{content}}}
+                </div>
+            </div>
+        </div>
+        {{/entries}}
+
+        <div id="about" class="uk-flex-top" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <div class="uk-modal-body uk-margin-auto-vertical" uk-overflow-auto>
+                    <p>
+                        Nope, Not Arabic is an archive of things that are not Arabic. It
+                        documents instances of butchered Arabic script in public, from major
+                        motion pictures to billboards to video games and everything in between.</p>
+    
+                    <h2>What is happening?</h2>
+                    <p>
+                        Computers are designed to handle the subset of the Latin script required to manipulate American
+                        English
+                        first and foremost. Every other writing system is an afterthought, and Arabic is particularly poorly
+                        served.
+                        Most of the images in this archive are the result of non-Arab graphic designers pasting Arabic text
+                        into
+                        <a href="https://www.adobe.com">mainstream graphic</a> design software that cannot handle anything
+                        but Latin characters and not checking with a
+                        native speaker.
+                    </p>
+    
+                    <p>I have written about this at length at <a
+                            href="https://increment.com/programming-languages/unplain-text-primer-on-non-latin/">The
+                            Increment</a> and the <a
+                            href="http://ojs.decolonising.digital/index.php/decolonising_digital/article/view/PersonalComputer">Decolonising
+                            the Digital Journal</a>, and I <a
+                            href="https://www.deconstructconf.com/2019/ramsey-nasser-a-personal-computer-for-children-of-all-cultures">spoke
+                            at DECONSTRUCT 2019</a> on the subject. </p>
+    
+                    <h2>What do I do if I see butchered Arabic?</h2>
+                    <p>
+                        Contact me on <a href="https://twitter.com/ra">Twitter</a> or <a href="mailto:ram@nas.sr">email</a>
+                        with a
+                        screenshot or photograph and information on where and when you saw
+                        it and I will be happy to add it to the archive. You should also contact the people responsible, if
+                        possible, and tell them they are embarrassing themselves and offending a billion people.
+                    </p>
+    
+                    <h2>How do I avoid butchering Arabic?</h2>
+                    <p>My article at <a
+                            href="https://increment.com/programming-languages/unplain-text-primer-on-non-latin/">The
+                            Increment</a> gets into it.</>
+    
+                    <h2>Who’s behind this?</h2>
+                    <p>
+                        Hi, I’m <a href="https://nas.sr/">Ramsey Nasser</a> and I do research into the hidden cultural
+                        assumptions
+                        present in computing among other things. Arabic is my native language so I lose sleep over this
+                        shit.
+                    </p>
+    
+                    <p>
+                        This archive was <a href="https://nopenotarabic.tumblr.com/">originally on tumblr</a> but as that
+                        platform
+                        has degraded over the years I decided to move
+                        everything to a git repo where I have more control over the content.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
