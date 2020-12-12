@@ -12,6 +12,7 @@ export function build(entries, options) {
     entries
         .sort((a, b) => new Date(b.date) - new Date(a.date))
         .forEach((entry, index) => {
+            index = entries.length - index
             let date = entry.date ? moment(new Date(entry.date)).format("MMM Do Y") : ""
             let content = marked(entry.content)
             let extension = entry.extension || guessExtension(entry.image)

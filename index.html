@@ -18,7 +18,7 @@
         <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-child-width-1-1@s" uk-grid="masonry:true">
             {{#entries}}
             <div>
-                <a href="#entry-{{index}}" uk-toggle>
+                <a href="#_{{index}}" uk-toggle>
                     <img class="uk-align-center" data-src="{{{image}}}" uk-img width="1800" height="1200" />
                 </a>
             </div>
@@ -26,12 +26,12 @@
         </div>
 
         {{#entries}}
-        <div id="entry-{{index}}" class="uk-flex-top" uk-modal>
+        <div id="_{{index}}" class="uk-flex-top" uk-modal>
             <div class="uk-modal-dialog uk-modal-body uk-margin-auto-vertical">
                 <button class="uk-modal-close-default" type="button" uk-close></button>
                 <a target="_blank" href="{{{image}}}"><img class="uk-align-center" data-src="{{{image}}}" uk-img /></a>
                 <div class="uk-modal-footer">
-                    <p><em>{{{date}}}</em></p>
+                    <p><em>{{{date}}}</em> <a href="?{{index}}"><span uk-icon="link"></span></a></p>
                     {{{content}}}
                 </div>
             </div>
@@ -101,7 +101,11 @@
         </div>
 
     </div>
-
+    <script>
+        if(location.search) {
+            UIkit.modal(document.querySelector(`#_${location.search.substr(1)}`)).show()
+        }
+    </script>
 </body>
 
 </html>
