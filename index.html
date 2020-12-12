@@ -31,7 +31,7 @@
                 <button class="uk-modal-close-default" type="button" uk-close></button>
                 <a target="_blank" href="{{{image}}}"><img class="uk-align-center" data-src="{{{image}}}" uk-img /></a>
                 <div class="uk-modal-footer">
-                    <p><em>{{{date}}}</em> <a href="?{{index}}"><span uk-icon="link"></span></a></p>
+                    <p><em>{{{date}}}</em></p>
                     {{{content}}}
                 </div>
             </div>
@@ -104,6 +104,25 @@
     <script>
         if(location.search) {
             UIkit.modal(document.querySelector(`#_${location.search.substr(1)}`)).show()
+        }
+
+        UIkit.util.on('.uk-modal', 'show', function (e) {
+            let id = e.target.id.substr(1)
+            window.history.pushState(`${id}`, "", `?${id}`);
+        });
+
+        UIkit.util.on('.uk-modal', 'hide', function (e) {
+            let id = e.target.id.substr(1)
+            window.history.pushState("home", "", "/");
+        });
+
+        window.onpopstate = e => {
+            console.log(e);
+            if(e.state === 'home') {
+                UIkit.modal(document.querySelector(".uk-modal.uk-open")).hide()
+            } else {
+                UIkit.modal(document.querySelector(`#_${e.state}`)).show()
+            }
         }
     </script>
 </body>
