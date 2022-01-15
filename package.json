@@ -5,7 +5,7 @@
         "fs-extra": "^9.0.1",
         "gray-matter": "^4.0.2",
         "hash-string": "^1.0.0",
-        "marked": "^2.0.0",
+        "marked": "^4.0.10",
         "mime-types": "^2.1.27",
         "moment": "^2.29.1",
         "mustache": "^4.0.1",
