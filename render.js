@@ -13,15 +13,17 @@ export function build(entries, options) {
         .sort((a, b) => new Date(b.date) - new Date(a.date))
         .forEach((entry, index) => {
             index = entries.length - index
+            let next = index - 1
+            let prev = index + 1
             let date = entry.date ? moment(new Date(entry.date)).format("MMM Do Y") : ""
             let content = marked(entry.content)
             let extension = entry.extension || guessExtension(entry.image)
             let image = entry.image.startsWith("/") ? entry.image : `/media/${hashHref(entry.image)}.${extension}`
-            indexView.entries.push({ date, content, index, image })
+            indexView.entries.push({ date, content, index, image, next, prev })
         })
 
     if(fs.existsSync(options.out)) {
-        fs.rmdirSync(options.out, { recursive: true, force: true})
+        fs.rmSync(options.out, { recursive: true, force: true})
     }
     fs.mkdirSync(options.out)
     fs.copySync("media", path.join(options.out, "media"))
