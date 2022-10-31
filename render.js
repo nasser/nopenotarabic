@@ -6,7 +6,7 @@ import moment from 'moment'
 import { hashHref, guessExtension } from './common.js'
 
 export function build(entries, options) {
-    console.log("[ssg] building", options)
+    console.log("[ssg] building", process.cwd(), options)
     
     const indexTemplate = fs.readFileSync('index.html', 'utf-8')
     const indexView = { entries: [] }
