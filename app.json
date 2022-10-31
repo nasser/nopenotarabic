@@ -1,7 +1,5 @@
 {
     "scripts": {
-        "dokku": {
-            "predeploy": "find . && cd /app/www && npm install && node ssg.js build --out /app/www/out && find ."
-        }
+        "heroku-postbuild": "npm install && node ssg.js build --out /app/www/out"
     }
 }
