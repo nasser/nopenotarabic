@@ -104,7 +104,12 @@
         }
 
         /* show all entries if no target */
+        /* correct but firefox does not support :has yet...
         #entries:not(:has(:target)) .entry {
+            display: block;
+        }
+        */
+        #entries.show-all .entry {
             display: block;
         }
 
@@ -140,6 +145,15 @@
             animation: 1s 1 normal dont-flash-content;
         }
     </style>
+    <script>
+        window.onload = window.onhashchange = () => {
+            const entries = document.querySelector("#entries")
+            if(location.hash.length === 0)
+                entries.classList.add("show-all")
+            else
+                entries.classList.remove("show-all")
+        }
+    </script>
 </head>
 
 <body>
