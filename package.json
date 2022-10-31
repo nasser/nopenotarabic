@@ -1,5 +1,8 @@
 {
     "type": "module",
+    "scripts": {
+        "start": "node ssg.js build"
+    },
     "dependencies": {
         "@iarna/toml": "^2.2.5",
         "fs-extra": "^9.0.1",

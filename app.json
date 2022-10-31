@@ -1,5 +1,4 @@
 {
     "scripts": {
-        "heroku-postbuild": "npm install && node ssg.js build --out /app/www/out"
     }
 }
