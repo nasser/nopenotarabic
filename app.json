@@ -1,7 +1,0 @@
-{
-    "scripts": {
-        "dokku": {
-            "predeploy": "cd www && node ssg.js build --out /app/www/out && find ."
-        }
-    }
-}
