@@ -1,12 +1,9 @@
-FROM nginx:alpine
-RUN apk add nodejs
-RUN apk add npm
-WORKDIR /app
-COPY package* ./
-COPY *.js ./
-COPY *.yaml ./
-COPY *.html ./
-ADD media media
+FROM node:alpine as build
+WORKDIR /build
+COPY package.json package-lock.json ./
 RUN npm install
-RUN node ssg.js build --out /usr/share/nginx/html
-CMD ["nginx", "-g", "daemon off;"]
+COPY . .
+RUN node ssg.js build
+
+FROM nginx:alpine
+COPY --from=build /build/out /usr/share/nginx/html 
