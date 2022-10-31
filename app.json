@@ -1,6 +1,7 @@
 {
     "scripts": {
         "dokku": {
+            "predeploy": "tree . && cd /app/www && npm install && node ssg.js build --out /app/www/out && tree ."
         }
     }
 }
