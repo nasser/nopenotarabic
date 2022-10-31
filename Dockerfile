@@ -9,3 +9,4 @@ COPY *.html ./
 ADD media media
 RUN npm install
 RUN node ssg.js build --out /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
