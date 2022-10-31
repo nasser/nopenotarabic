@@ -6,6 +6,8 @@ import moment from 'moment'
 import { hashHref, guessExtension } from './common.js'
 
 export function build(entries, options) {
+    console.log("[ssg] building", options)
+    
     const indexTemplate = fs.readFileSync('index.html', 'utf-8')
     const indexView = { entries: [] }
 
@@ -23,9 +25,12 @@ export function build(entries, options) {
         })
 
     if(fs.existsSync(options.out)) {
+        console.log("[ssg] removing", options.out)
         fs.rmSync(options.out, { recursive: true, force: true})
     }
     fs.mkdirSync(options.out)
+    console.log("[ssg] copying media", path.join(options.out, "media"))
     fs.copySync("media", path.join(options.out, "media"))
+    console.log("[ssg] copying writing index.html", path.join(options.out, "index.html"))
     fs.writeFileSync(path.join(options.out, "index.html"), mustache.render(indexTemplate, indexView))
 }
