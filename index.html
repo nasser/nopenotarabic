@@ -104,7 +104,7 @@
         }
 
         /* show all entries if no target */
-        /* correct but firefox does not support :has yet...
+        /* works, but firefox does not support :has yet...
         #entries:not(:has(:target)) .entry {
             display: block;
         }
@@ -146,6 +146,7 @@
         }
     </style>
     <script>
+        // for firefox support, 100% css otherwise :(
         window.onload = window.onhashchange = () => {
             const entries = document.querySelector("#entries")
             if(location.hash.length === 0)
