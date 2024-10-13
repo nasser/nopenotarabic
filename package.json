@@ -1,7 +1,8 @@
 {
     "type": "module",
     "scripts": {
-        "start": "node ssg.js build"
+        "start": "node ssg.js build",
+        "deploy": "node ssg.js build && rsync -achv out/* root@notarabic.com:/var/www/notarabic.com --delete"
     },
     "dependencies": {
         "@iarna/toml": "^2.2.5",
